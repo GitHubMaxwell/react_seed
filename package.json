@@ -1,5 +1,5 @@
 {
-  "name": "reactify_port_site",
+  "name": "react_seed",
   "version": "0.1.0",
   "private": true,
   "homepage": "https://githubmaxwell.github.io",
@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
+    "ajv": "^6.5.5",
     "css-loader": "^1.0.1",
     "gh-pages": "^2.0.1",
     "node-sass": "^4.10.0",
