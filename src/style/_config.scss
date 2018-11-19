@@ -1,16 +1,10 @@
-$primary-color: #444;
-// $primary-color: #fff;
-// could do light and dark mode setting per adding removing classes
-$text-color: #fff;
-$secondary-color: yellow;
-$show-home-image: true;
-$home-image-url: url("../assets/background.jpg");
-$background-opacity: 0.9;
-// $profile-picture: url("../assets/portrait.jpg");
-// $profile-picture-sm: url("../assets/portrait_small.jpg");
+// Color Palette (placholder change)
+$header-color: #f9423a;
+$primary-color: #f9423a;
+$secondary-color: black;
+$background-color: #f6f3ea;
 
-// Set text color dynmaically
-
+// Dynamically Set Color (placholder change)
 @function set-text-color($color) {
   @if (lightness($color) > 40) {
     @return #000;
@@ -18,31 +12,26 @@ $background-opacity: 0.9;
     @return #fff;
   }
 }
+// ============ End of Color Palette
+
+// Font Palette (placholder change)
+$heading-font: Arial, Helvetica, sans-serif;
+$sub-heading-font: Helvetica;
+$body-font: Times;
+// ============ End of Font Palette
+
+// Layout Palette
+$layout-grid-container: grid;
+$layout-flex-container: flex;
+// ============ End of Layout Palette
+
+// Transition (placholder change)
 @mixin easeOut {
   transition: all 170ms ease-out;
 }
-@mixin background {
-  @if $show-home-image {
-    & {
-      background: $primary-color;
-      background-attachment: fixed;
-      background-size: cover;
-    }
-    &:after {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      width: 100%;
-      min-height: calc(100vh - 60px);
-      z-index: -1;
-      background: rgba($primary-color, $background-opacity);
-    }
-  }
-}
+// ============ End of Transitions
 
-// Media Query Mixins
-
+// Media Queries (placholder change)
 @mixin mediaSm {
   @media screen and (max-width: 500px) {
     @content;
@@ -53,7 +42,7 @@ $background-opacity: 0.9;
     @content;
   }
 }
-// why do you need a range?
+// do you need a range?
 // cant just do (max-width:1170px)?
 @mixin mediaLg {
   // @media screen and (max-width: 1170px) {
@@ -68,3 +57,18 @@ $background-opacity: 0.9;
     @content;
   }
 }
+
+/********* Media Query Usage **********/
+/* bring in mixin with @include <name> -> content inside that @include <name> {...} maps to the config file @content
+
+@include mediaSm {
+  main#home h1 {
+    margin-top: 10vh;
+  }
+  .projects {
+    grid-template-columns: 1fr;
+  }
+}
+
+*/
+// ============ End of Media Queries
